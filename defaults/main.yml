@@ -1,0 +1,16 @@
+---
+# defaults file for postgress.web
+
+postgres_version: "9.4"
+
+# https://wiki.postgresql.org/wiki/YUM_Installation
+postgres_yum_repos_rpm: "https://yum.postgresql.org/9.4/redhat/rhel-7-x86_64/pgdg-centos94-9.4-3.noarch.rpm"
+
+# postgres_version_no_dots is defined in tasks/main.yml using set_fact
+postgres_packages:
+  - "postgresql{{ postgres_version_no_dots }}"
+  - "postgresql{{ postgres_version_no_dots }}-server"
+  - "postgresql{{ postgres_version_no_dots }}-contrib"
+  - "postgresql{{ postgres_version_no_dots }}-libs"
+
+...
