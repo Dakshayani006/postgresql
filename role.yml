@@ -4,7 +4,7 @@
   sudo: yes
   sudo_user: root
   vars_files:
-    - 'defaults/main.yml'
+    - 'var/main.yml'
   tasks:
     - include: 'tasks/main.yml'
 ...
