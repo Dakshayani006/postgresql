@@ -30,4 +30,18 @@
     state: started
     enabled: yes
 
+- name: install net-tools
+  yum:
+    name: net-tools
+    state: present
+
+- name: configuration file
+  template:
+    src: postgresql.conf
+    dest: "/var/lib/pgsql/{{ postgres_version }}/data/postgresql.conf"
+    owner: postgres
+    group: postgres
+    mode: 0644
+
+
 ...
